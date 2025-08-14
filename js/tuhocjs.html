@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"><!--cho phep khai bao toan bo ky tu cho trinh duy duoi dang ngon ngu nguoi vietnam-->
+    <title>Test JS Prompt</title>
+</head>
+<body>
+    <script>
+        document.write("hello");
+        console.log("hello2");
+        
+        //bien
+        var tuoi = 18;
+
+        //co cac kieu du lieu: kieu so:var bien=number; kieu chuoi:var tenbien="chuoi ki tu";kieu logic var tenbien=(true or false)
+        //toms taat thay vi trong c no co nhieu kieu du lieu thi trong day no chi co let var va const
+        document.write(tuoi);
+
+        //cach nhap du lieu
+        var ten = window.prompt("nhập tên của người bạn thầm thương");
+        ten="i love"+ten
+        document.write(ten+" nhung ta lai chang co duoc nang");
+        document.write("<br>")
+        var tuoicoay= parseInt(window.prompt("Nhap tuoi co ay"))
+        if(tuoicoay>=16){
+            document.write("<br>lam vo anh nhe")
+        }
+        else document.write("\nchung ta khong hop nhau dau em")
+        switch(tuoicoay){
+            case 6:{
+                document.write("<br>em con nho lam")
+                document.write("<br>",18-tuoicoay,"năm nưa roi ta suy nghĩ tiếp nha")
+                break;
+                //na na ngon ngu c
+            }
+        }
+        //vòng lặp
+        for(var i=0;i<10;i++){
+            document.write("<br>",i,". anh yeu em")
+        }
+        // điểm đặc trưng của js
+        var co_ay={
+            ten: "zitzang",
+            tuoi: 18,
+            tinhtrang: true,
+            dactrung: {
+                cung: "xunu",
+                vengoai:"dangyeu"
+            }
+        }//nội dung được gán bằng dấu "=" còn thuộc tính được gán bằng ":" các thuộc tính cách nhau 1 dấu phẩy
+        //cách truy suất ra nội dung giống cách truy suất gia trị trong struct của ngôn ngữ c
+        document.write("co ay ten ",co_ay.ten," nam nay co ay ",co_ay.tuoi," tuoi va co ay cung ",co_ay.dactrung.cung)
+        //trong js sẽ có function thay vì ham như bên ngôn ngữ c 
+        var ham=function(){
+            //nội dung ham
+            var namsinh=parseInt(window.prompt("nhap nam sinh cua ban"))
+            var tuoi=2025-namsinh
+            document.write("vậy nam nay bạn ",tuoi," tuổi rồi á")
+        }
+        var tinh_tuoi=function(){
+            var namsinh=parseInt(window.prompt("nhap nam sinh cua ban"))
+            return 2025-namsinh
+        }
+        ham()
+        var tinh_ngay=function(tuoi){
+            document.write("<br>Vậy la đã ",tinh_tuoi()-tuoi," năm cậu không gặp cô ấy rồi đấy vẫn còn muốn đợi à")
+
+        }
+        tinh_ngay(co_ay.tuoi)
+        //về cơ bản ta thấy hàm và function và hàm có nhiều điểm tương tự nhau có thể trả vè 1 câu lệnh con hoặc 1 giá trị có thể tái sử dụng nhiều lần ...
+        //mảng 
+        a=["thư","duyên","quỳnhanh","ngân","N.thảo","p.Thảo","uyên"]
+        for(let i of a){//cái này thì hơi giống cấu trúc trong python for i in array:print(i) nó sẽ duyệt hết các phần tử trong mảng
+            document.write("<br>",i)
+        }
+        //có thể gọi riêng các phần tử trong mảng array[]  bằng cách gọi array[0->n] như bth 
+        document.write(a.length)//độ dài hay số lượng phần tử có trong mảng
+        //ngoài ra còn có vài lệnh nhằm hỗ trợ cho mảng như 
+        a.push("hiền")//thêm phần tử vào cuối mảng
+        a.pop()//xóa phần tử ở cuối
+        document.write(a)//có thể in cả mảng như này cũng được
+        a[1]="trúc"
+        document.write("<br>",a)
+        //để them vào giũa mảng khá đơn giản với cú pháp sau chứ không rắc thôi như trong ngôn ngữ c là phải chuyền đơn vị về sau và tăng kích thước mảng 
+        a.splice(1,0,"hương")//trong đó array.splice(vị trí muốn gán,số luong phần từ muốn xóa từ vị trí đó , phần từ mới)
+        document.write("<br>",a)
+        //và trong ngôn ngữ js giống python ở khoản trong 1 mảng có thể có nhiều kiểu dữ liệu từ số đến chuối kĩ tự hay tên...còn trong c thì chỉ đc 1 muốn nhiều phải dùng struct
+        // chuỗi kí tự 
+        var s="chào tất cả mọi người"//có thể coi chuỗi kí tự này là 1 mảng cũng được 
+        //tuy là gần giống mảng nhưng chuỗi không có các chức năng của mảng như map() tạo ra 1 mảng mới từ cơ sở mảng cũ,filter() tạo ra 1 mảng từ mảng gồm các phần tử thỏa điều kiện reduce() dùng để tính toán tổng hợp lại thành 1 giá trị duy nhất từ mảng vd gộp chuỗi tích tổng .. còn rất nhiều tinnsh năng khác
+        document.write("<br>",s.length)
+        //Dom:document object model là cầu nối với html giúp cho trang wed không còn là 1 trang wed tĩnh nữa mà là 1 trang wed động 
+        //bây h ta sẽ học cách kết hợp js và html
+        var Hello=function(){
+            var ten= document.getElementById("1").value
+            //document.write("Chào ",ten) nếu chạy câu lệnh  này sẽ thay thế toàn bộ đoạn code vì trang đã chạy xong cách thay thế là cho nội dung đó vô hàm div
+            var loi_chao="xin chao"+ten
+            document.getElementById("2").innerHTML=loi_chao
+        }//gán giá trị của id=2 bằng loichao
+            //.value  là gán giá trị cho các thẻ như input,textarea,select còn .innerHTML là để gán giá trị cho các thẻ div,p,h1,span....
+        //cơ chế bất đồng bộ: Asynchronous là 1 kiến thức vô cùng quan trọng trong việc lập trình wed giúp giải quyết nhiều công việc cùng lúc giúp giảm thời gian chờ ... thay vì phải làm từng bước câu lệnh trước nào có trước thì làm trc có sau thì làm sau như bth vd
+        var thongbao=function(){
+            document.getElementById("2").innerHTML="đã hết giờ nhập" //khi đến h nó sẽ thay nội dung trong hàm div id"2"" bên dưới từ lời chào sang chứ hết  giờ
+            }
+        setTimeout(thongbao,3000)//trong đó 3000 là thời gian đếm ngược (đơn vị miligiay) để thực hiện câu lệnh function bên trái và cách gọi hàm như này người ta gọi là truyền callback có thể tìm hiểu thêm
+        //tóm tắt phần này để kết hơp js với html ta lấy thông tin hay value trong hàm inphut style="text" gán cho biến"ten" rồi ta thiết lập nút xác nhận khi kích hoạt onclick thì nó sẽ truyền gia trị hay gán giá trị cho hàm div có id là 2 bên với với nội dung trong hàm xinchaof và in ra màn hình 
+        //sau này ta đụng tới hàm setimeout là hàm sẽ kích hoạt câu lệnh theo thời gian xác định trước đó để thực hiện câu lệnh mà ở đây là câu lệnh gán hàm thông báo kết thúc cũm vào hàm div id 2 mà ta đã gán lời chào trước đấy sau 3s và h đây nọi dung trong hàm div id 2 là thông báo kết thúc thay vì xin chào ta đã gán trước đó 
+        //đây ta gọi là đa luông hay bất đòng bộ cùng tiến hành cùng 1 lúc 
+        //kiến thức của nó nói thật thì rất là rộng nên việc chỉ qua 1 xíu từng này mà hiểu thì là bất khả thi nên cố tìm hiểu từng phần sâu hơn sau những dòng code này trên mạng nhá ok
+        //data storage:lưu trữ dữ liệu lâu dài dù có tắt chương trình thì dữ liệu nó vẫn còn vd cookie trên mấy trang wed ò hoặc data base sẽ học trong nhũng nắm sắp tới nói chữ cũng không rõ tên nó hihi
+        //và bản thân trình duyệt gg ta đang chạy đã được tích hợp 1 cái dâtbase và được lưu với cú pháp localStorage.tenthongtin="nội dung"
+        localStorage.ten="Hà Văn Quang"
+        localStorage.namsinh="2006"
+        document.write(localStorage.ten)
+        //và ta có thể truy xuát  dữ liệu như trên 
+        //ngoài ra ta còn có thể dùng nó trong nhiều vai trò và mở rông thêm đây chỉ là tóm tắt 
+        //và thông tin đã lưu dù có xóa dòng code nhưng địa chỉ trang wed của bài này sẽ vẫn còn lưu không có sự khác thay đổi 
+        // và thông tin nhập vào khung mỗi lần  nhấn xác nhận nó sẽ kích hoạt và thay đổi hiện lên màn hình thông tin mới còn cái settimeout chỉ thực hiện 1 lần sau 3 giây kể từ khi chạy chương trình ta có thể lặp lại việc thông báo hết giờ sau mỗi lần nhấn nút xác nhận bằng cách  cho cá hàm kiên quan đến thông báo hết giờ vào trong hàm hello
+        
+    </script>
+        Nhập thông tin:
+        <input type="text" id="1" value> <!--nguồn thông tin nhập vào-->
+        <button type="button" onclick="Hello()">Xác nhận </button> <!--sau mở đầu ta có thể nhập tín hiệu để kích câu lệnh trong script và chạy hàm lời chào tuy nhiên nó sẽ thay thế toàn bộ những giá trị đã chạy trước đó nên cách khắc phục là cho giá trị câu lệnh vào hàm div  -->
+        <div id="2"></div><!--gán giá trị thông qua id vào đây-->
+</body>
+</html>
+<!--Kết thúc ở đây nói lại những kiến thức trên là những thứ cơ bản nhất có thể của ngôn ngữ js để hiểu rõ hơn phục vụ cho việc lập trình wed sau  này cần học hỏi nhiều hơn chi tiết hơn và thực hành là điều không thể thiếu nếu muốn nhớ và làm quen các câu lệnh, nhớ làm các dự án nhỏ để cv đẹp hỗ trợ việc xin việc sau này -->
