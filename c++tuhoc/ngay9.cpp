@@ -46,6 +46,20 @@ int main(){
     for(string i:f){
         cout << i<<endl;
     }
+    pair<int, int> g = {100,200};//lưu cặp dữ liệu 
+    //cách truy cập các giá trị trong g
+    g.first;//100
+    g.second;
+    pair<pair<int,int>,int> j={{100,200},200};
+    //cách truy cập các giá trị trong j
+    j.first.first;//100
+    j.first.second;//200
+    j.second;//200
+    //kiểu tuple gần giống với pair nhưng chứa được nhiều giá trị và kiểu dữ liệu hơn
+    tuple<int, int , string> tupleTest={6,7,"quang"};
+    //cách truy cập giá trị 
+    get<1>(tupleTest);//6
+    get<3>(tupleTest);//"quang"
     
     return 0;
 }
