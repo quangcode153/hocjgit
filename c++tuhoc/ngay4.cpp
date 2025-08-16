@@ -18,6 +18,11 @@ int main(){
     for(int i=0;i<n;i++){
         cin>>a[i];
     }
+    //hoặc
+    for(int &i:a){
+        cin>>i;
+    }
+    
     //tìm UCLN các cặp giá trị trong mảng 
     int ucln=0;
     for(int i=0;i<n-1;i++){
