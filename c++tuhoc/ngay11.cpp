@@ -27,7 +27,7 @@ int main(){
     for(map<int, string>::iterator it=testmap.begin();it != testmap.end();++it){
         cout<<(*it).first<<" "<<(*it).second << endl;
     }
-    if(testmap.count(100) != 0){
+    if(testmap.count(100) != 0){//xem trong map co key 100 khong
         cout<<"co ton tai "<<testmap[100]<<endl;
     }
     else cout<<"khong ton tai key 100"<<endl;
