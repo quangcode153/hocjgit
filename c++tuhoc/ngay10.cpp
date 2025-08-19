@@ -11,7 +11,7 @@ using namespace std;
 //multiset nó giống set đều để lưu dữ liệu nhưng multiset có thể lưu các giữ liệu khác nhau và tính số lượng các phần tử giống trong mảng  và vector tính cả phần tử trùng, ngoài điểm này thì multiset vẫn có thể sử dụng các hàm phía trên của set
 //unordered_set:lưu các phần tử riêng biệt nhưng không được sắp xếp 
 int main(){
-    set<int> testsets;//lưu các tập hợp mà các tập hợp đó không có các giá trị giống nhau 
+    set<int> testsets;//lưu tập hợp mà các gias trị trong tập hợp đó đó không có các giá trị giống nhau 
     testsets.insert(1);
     testsets.insert(2);
     testsets.insert(4);
@@ -36,7 +36,7 @@ int main(){
 
     }
     set<int> b;
-    int n;cin>>n;
+    int n; cin>>n;
     for (int i=0;i<n;i++){//có thể khai báo như sau giống với vector ha
         int tmp;cin>>tmp;
         b.insert(tmp);
@@ -46,13 +46,13 @@ int main(){
     testmts.erase(3);//xóa 1 giá trị 3 tức xóa toàn bộ 3
     testmts.erase(testmts.find(4));//xóa 1 phần tử có giá trị là 4 các giá trị 4 khác vẫn còn
     testmts.erase(testmts.find(1),testmts.find(3)); // xóa từ giá trị 1 đến trước giá trị 3 hay nói cách khác xóa đoạn [1,3)
-    int n,k;cin>>n>>k;
-    int h[n];
+    int p,k;cin>>p>>k;
+    int h[p];
     for(int &i:h) cin>>i;
     for(int i=0;i<k;i++){//lưu 3 giá trị đầu
         testmts.insert(h[i]);
     }
-    for(int i=k;i<n;i++){//thực hiện in giá trị lớn nhất trong 3 giá trị rồi xóa giá trị đầu tiên thêm giá trị tiếp theo cứ thế  biến đổi 3 giá trị trong testmts liên tục đến hết
+    for(int i=k;i<p;i++){//thực hiện in giá trị lớn nhất trong 3 giá trị rồi xóa giá trị đầu tiên thêm giá trị tiếp theo cứ thế  biến đổi 3 giá trị trong testmts liên tục đến hết
         cout<<*testmts.rbegin()<<endl;
         testmts.erase(testmts.find(h[i-k]));
         testmts.insert(h[i]);
