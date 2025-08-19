@@ -5,7 +5,7 @@ using namespace std;
 //nói cách khác map là lưu các pair thay vì pair chỉ chứa được 1 cặp số thì map chứa dc nhiều pair
 //(key, value); key là độc nhất không được trungf nếu trùng nó sẽ ghi đè giá trị còn value có thể trùng
 //count:nhớ trong map để tìm 1 giá trị ta dựa vào key chứ không dựa vào value 
-//find:tìm kiếm key nếu không tồn tại nó sẽ trả về end() và ngược  lại 
+//find:tìm kiếm key nếu không tồn tại nó sẽ trả về .end() và ngược  lại nó sẽ trả về địa chỉ phần tử đó
 //erase:truyền giá trị key vào thì nó sẽ xóa cả cặp luôn
 //multimap:có các key giống nhau cũm đc kiểu 1 vợ mà 2 chồng cũm đc á còn trên là phải 1 vợ 1 chồng có chồng mới phải bỏ chồng cũ (đè)
 //unordered_map : giống chỉ 1 ket duy nhất chỉ khác map là các gí trị không được xếp theo thứ tự mà nó tùm lum hết 
