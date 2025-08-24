@@ -1,0 +1,51 @@
+//object kiến thức về object 2
+//tìm hiểu về constructor hàm tạo khuôn mẫu trong js
+const student ={
+    fullName : "hà văn quang",
+    birthYear : 2006,
+    address :{
+        city : "bao loc",
+        country : "viet nam",
+    },
+    getAge : function(){
+        return 2025 - this.birthYear;
+    },
+}
+//để tạo ra nhiều đối tượng có cùng khuôn mẫu(prototype) ta sử dụng constructor
+//cách 1 function expression(ít dùng);
+const SinhVien=function(fullName, ID, birthYear, hometown){
+    this.fullName=fullName;
+    this.ID=ID;
+    this.birthYear=birthYear;
+    this.homtown=hometown;
+    this.showInfo=function(){
+        return `${this.fullName} ${this.ID} ${this.hometown}`;
+    };
+};
+//cách 2 function declaration (thường dùng hơn)
+function Student(fullName,ID,birthYear,hometown){
+    //thuộc tính
+    //tạo ra thuôc tính mới với this.key=value; trong đó this có tác dụng tham chiếu động hiểu hơn ở dòng 39
+    this["full Name"]=fullName;//cách thao tác với các tên key không hợp lệ 
+    this.ID=ID;
+    this.birthYear=birthYear;
+    this.homtown=hometown;
+    //
+    this.showInfo=function(){
+        return `${this.fullName} ${this.ID} ${this.hometown}`;
+    };
+}
+//tạo 1 đối tượng cụ thể (instance - 1 thể hiện) từ hàm Student;
+const nhung=new Student("le khánh nhung",22,2005,"HaNoi");//khi này this sẽ thành nhung và gán tạo ra các phuong thức trong hàm vd: this ID=ID <=> nhung.ID=ID; đó là tác dụng của this
+console.log(nhung.ID);
+const lan=new SinhVien("le thi lan",23,1997,"lamdong");
+//kết quả như nhung
+console.log(lan.showIndo());//nếu key của phương thức là 1 tên không hợp lệ thì ta gọi như sau lan["showInfo"]();
+//kiểm chứng instance là kiểm tra xem 1 object có phải là instance của 1 constructor/class hay không
+console.log(nhung instanceof Student);// true
+console.log(nhung instanceof Object);//true
+console.log(nhung instanceof Array);//False
+//và nhưng lan giờ là các object nên có thể thực hiện các thao tác như các object bth vd như them xóa sửa sử dụng các hàm như Object.key...các phương thức ghi ở tuhoc8
+
+
+
