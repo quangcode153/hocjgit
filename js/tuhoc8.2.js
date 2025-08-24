@@ -45,7 +45,9 @@ console.log(lan.showIndo());//nếu key của phương thức là 1 tên không 
 console.log(nhung instanceof Student);// true
 console.log(nhung instanceof Object);//true
 console.log(nhung instanceof Array);//False
-//và nhưng lan giờ là các object nên có thể thực hiện các thao tác như các object bth vd như them xóa sửa sử dụng các hàm như Object.key...các phương thức ghi ở tuhoc8
-
+//và nhung lan giờ là các object nên có thể thực hiện các thao tác như các object bth vd như them xóa sửa sử dụng các hàm như Object.key...các phương thức ghi ở tuhoc8
+//2.prototype trong js mỗi đối tượng đều có một nguyên mẫu chame(prototype) ngoiaj trừ dói với tượng gốc objectBase 
+//-objectBase Là gốc của tất cả các đối tượng trong js nếu chúng ta lần theo đến cùng sẽ thấy object và nó không có nguyên mẫu hoặc cha mẹ 
+//-vd array sẽ gồm các thuộc tính sau{length:0,prototype:array(0)}trong thuộc tính prototype: array nó sẽ có các thuộc tính và đến prototype ở sâu cuối cùng là object và người ta gọi nó là objectBase 
 
 
