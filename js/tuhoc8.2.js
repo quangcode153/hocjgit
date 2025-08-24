@@ -32,7 +32,7 @@ function Student(fullName,ID,birthYear,hometown){
     this.homtown=hometown;
     //
     this.showInfo=function(){
-        return `${this.fullName} ${this.ID} ${this.hometown}`;
+        return `${this["full Name"]} ${this.ID} ${this.hometown}`;
     };
 }
 //tạo 1 đối tượng cụ thể (instance - 1 thể hiện) từ hàm Student;
@@ -49,5 +49,27 @@ console.log(nhung instanceof Array);//False
 //2.prototype trong js mỗi đối tượng đều có một nguyên mẫu chame(prototype) ngoiaj trừ dói với tượng gốc objectBase 
 //-objectBase Là gốc của tất cả các đối tượng trong js nếu chúng ta lần theo đến cùng sẽ thấy object và nó không có nguyên mẫu hoặc cha mẹ 
 //-vd array sẽ gồm các thuộc tính sau{length:0,prototype:array(0)}trong thuộc tính prototype: array nó sẽ có các thuộc tính và đến prototype ở sâu cuối cùng là object và người ta gọi nó là objectBase 
+//để kiểm tra prototype của 1 đối tượng ta thao tác như sau:
+console.log(Object.getPrototypeOf(nhung));//Student(...);
+console.log(Student.prototype);//Student(...);)
+console.log(Student.prototype===Object.getPrototypeOf(nhung));//true
+//trong đó Student.prototype: trỏ đến chính thuộc tính prototype của Student; Object.getPrototypeOf: trỏ đến chính prototype của nguyên mẫu cha của đối tượng 
+//như vậy khi kiểm tra 1 cái khuôn ta sử dụng .prototype còn khi ktr 1 đối tượng ta dùng Object.getPrototypeOf(doituong) 
+//hoặc cách khác 
 
-
+console.log(Student.prototype.isPrototypeOf(nhung));//ktra Student.prototype có phải cha mẹ của nhung không (true-false)
+// ĐỂ  THÊM PHƯƠNG THỨC vào prototype(khuon hay chame) ta thao tác như sau 
+Student.prototype.sua =function(){
+    console.log(`${this["full Name"]} gau gau`);
+}
+//them phuong thuc vao đói tượng cụ thể
+nhung.khoc=function(){
+    console.log(`${this["full Name"]} huhu`);
+}
+//tóm tắt để thêm thuộc tính cho cái khuôn chung ta dùng đến prototype nó sẽ cho thêm thuộc tính đó cho tất cả các object có chung prototype đó 
+//còn nếu muốn thuộc tính riêng biệt của từng đối tượng cụ thể ta gọi tên thuộc tính mới gán như bth là được 
+//ĐỂ THÊM THUỘC TÍNH vào prototype
+Student.prototype.emailtruong="utc2@gmail.com";
+console.log(nhung.emailtruong);//"utc2@gmail.com"
+//ktr nhung có trực tiếp chứa thuộc tính emailtruong hay không
+console.log(nhung.hasOwnProperty(emailtruong));//false vì email mới được thêm chứ ko phải có ngay từ khi mới khởi tạo ban đầu nên chỉ được coi là kế thừa chứ không trực tiếp chứa 
