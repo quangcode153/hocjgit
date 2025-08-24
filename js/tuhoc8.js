@@ -93,5 +93,13 @@ tóm tắt  freeze= đóng băng(không đụng được gì hết)
          seal=đóng kín chỉ cho sửa giá trị
          
 */
+//kiến thức thêm 
+//khi khai báo 1 đối tượng ta nên dùng const hay let 
+//var cho tái định nghĩa không nên dùng vd var a=5; var a=9 thì a=5 nó sẽ bị đè
+//let ko thể tái định nghĩa tuy nhiên cũm có thể bị ghi đè nếu dùng lại tên object  
+//const thì nó ko thể tái định nghĩa không thể bị ghi đè nhưng có thể xóa thêm sửa đổi thuộc tính bth nên khi ta khai báo 1  object ta nên sử dụng const
+
+
+
 
 
