@@ -124,14 +124,14 @@ for(int i=0;i<soLuong;i++){
     int x;cin>>x;
     map4[x]++;
 }
-int res,fre =INT_MIN;
+int res2,fre2 =INT_MIN;
 for(pair<int, int> x:map4){
-    if(x.second>fre){
-        fre=x.second;
-        res=x.first;
+    if(x.second>fre2){
+        fre2=x.second;
+        res2=x.first;
     }
 }
-cout<<res<<" "<<fre<<endl;
+cout<<res2<<" "<<fre2<<endl;
 
 //bài kí tự xuất hiện nhiều nhất trong xâu kí tự
 //bằng mảng
