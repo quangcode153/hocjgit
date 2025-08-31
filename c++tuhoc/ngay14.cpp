@@ -29,7 +29,7 @@ void selectionsort(vector<int> &a, int n){//theo chiều tăng dần
         cout <<it<<" ";
     }
     cout << endl;
-}//%sắp xếp nổi bọt tóm tắt tiến hành so sánh 2 giá trị liền kề nhau rồi đừa giá trị cao nhất ra sau cùng rồi kệ nó xét giá trị cao thứ 2 theo các tương tự mỗi lần đưa nó đến cuối mảng xét thì để im ko đụng đến nx
+}//%sắp xếp nổi bọt tóm tắt tiến hành so sánh 2 giá trị liền kề nhau rồi đưa giá trị cao nhất ra sau cùng rồi kệ nó xét giá trị cao thứ 2 theo cách tương tự mỗi lần đưa nó đến cuối mảng xét thì để im ko đụng đến nx
 //Cách làm theo quang của bbs
 void bubblesort(vector<int> &a,int n){//tăng dần
     do{
@@ -41,7 +41,7 @@ void bubblesort(vector<int> &a,int n){//tăng dần
         n--;
         if(!swapped) break;//nếu không có sự sắp xếp nào trong vòng lặp for nghĩa là mọi vị trí đều đúng rồi out ra luôn thôi
         
-    }while(n>=2);
+    }while(n>=2);//chạy đến khi còn 1 giá trị thì ta sẽ không xét nx 
     for (int it:a){
         cout<<it<<" ";
     }
@@ -62,7 +62,7 @@ void bubblesort2(vector<int> &a,int n){//tăng dần
     }
     cout<<endl;
 }
-//%Sắp xếp chèn tóm tắt tìm ra vị trí mà đằng trước là số bé hơn mình đăng sau là số lớn hơn mình rồi đẩy các số đằng sau lớn hơn mình sang phải và chèn giá trị đó vào vị trí phù 
+//%Sắp xếp chèn tóm tắt tìm ra vị trí mà đằng trước là số bé hơn mình đăng sau là số lớn hơn mình rồi đẩy các số đằng sau lớn hơn mình sang phải và chèn giá trị đó vào vị trí phù hợp 
 void insertionsort(vector<int> &a,int n){//tăng dần
     for(int i=1;i<n;i++){
         int Value=a[i];
