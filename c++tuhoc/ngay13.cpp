@@ -40,6 +40,7 @@ bool binary_search(vector <int> &a,int l, int r,int x){
         binary_search(a,l,mid-1,x);
     }
 }
+//ktr vị trí xuất hiện dầu tiên của giá trị
 int first(vector<int> &a,int n,int x){
     int l=0,r=n-1;
     int res=-1;
@@ -61,6 +62,8 @@ int first(vector<int> &a,int n,int x){
     }
     return res;
 }
+//Ktr vị trí xuất hiện cuối cùng của giá trị
+
 int last(vector<int> &a,int n,int x){
     int l=0,r=n-1;
     int res=-1;
