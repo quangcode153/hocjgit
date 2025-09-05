@@ -52,7 +52,7 @@ int merge2(int a[], int l, int m, int r){
         }
         else{
             a[l++]=y[j++];
-            sum+=x.size()-i;
+            sum+=x.size()-i;//vì các giá trị trong x và y đều được sắp xếp theo chiều tăng dần và index các giá trị bên trái luôn < giá trị bên phải (i<j luôn đúng) nên chỉ cần 1 bên trái > bên phải là những giá trị từ vị trí đó về sau đều sẽ lớn hơn số đang xét nên (size -i) 
         }
     }
     //nếu còn giá trị chưa xét thì lưu theo thứ tự còn dư mà đè vào mảng
